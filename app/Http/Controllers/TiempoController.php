@@ -12,10 +12,16 @@ class TiempoController extends Controller
     }
 
     public function save(Request $request){
+        if(!$request->ajax()){
+            return redirect('/');
+        }
         tiempo::insert($request->all());
     }
 
     public function update(Request $request, $id){
+        if(!$request->ajax()){
+            return redirect('/');
+        }
         tiempo::where('id','=',$id)->update($request->all());
     }
 

@@ -9,14 +9,19 @@ class ActividadController extends Controller
 {
     public function list($id){
         return actividad::where('id_user',$id)->get();
-       // return actividad::get();
     }
 
     public function save(Request $request){
+        if(!$request->ajax()){
+            return redirect('/');
+        }
         actividad::insert($request->all());
     }
 
     public function update(Request $request, $id){
+        if(!$request->ajax()){
+            return redirect('/');
+        }
         actividad::where('id','=',$id)->update($request->all());
     }
 

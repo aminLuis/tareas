@@ -15,10 +15,12 @@ class CreateTiemposTable extends Migration
     {
         Schema::create('tiempos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('id_actividad');
+            $table->unsignedBigInteger('id_actividad');
             $table->date('fecha')->nullable();
             $table->string('horas')->nullable();
             $table->timestamps();
+
+            $table->foreign('id_actividad')->references('id')->on('actividads');
         });
     }
 

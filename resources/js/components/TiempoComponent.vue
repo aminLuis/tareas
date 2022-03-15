@@ -1,7 +1,7 @@
 <template>
     
     <div>
-
+        
         <ul class="list-group">
       
           <li class="list-group-item" v-for="actividad in actividades" :key="actividad.id">
@@ -121,7 +121,9 @@ export default {
                 'horas':''
             },
             tiempos:[],
-            idActividad:''
+            suma:[],
+            idActividad:'',
+            total:0
         }
     },
 

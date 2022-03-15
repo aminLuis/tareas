@@ -2421,7 +2421,9 @@ var Usuario = JSON.parse(user.content).name;
         'horas': ''
       },
       tiempos: [],
-      idActividad: ''
+      suma: [],
+      idActividad: '',
+      total: 0
     };
   },
   methods: {
