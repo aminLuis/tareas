@@ -23,15 +23,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['prefix'=>'actividad'],function(){
-    Route::get('list', 'ActividadController@list');
+    Route::get('list/{id}', 'ActividadController@list');
     Route::post('save', 'ActividadController@save');
     Route::put('update/{actividad}', 'ActividadController@update');
-    Route::delete('deleteInsumo', 'ActividadController@delete');
+    Route::delete('delete/{id}', 'ActividadController@delete');
 });
 
 Route::group(['prefix'=>'tiempo'],function(){
-    Route::get('list', 'TiempoController@list');
+    Route::get('list{id}', 'TiempoController@list');
     Route::post('save', 'TiempoController@save');
-    Route::put('update/{actividad}', 'TiempoController@update');
-    Route::delete('deleteInsumo', 'TiempoController@delete');
+    Route::put('update/{tiempo}', 'TiempoController@update');
+    Route::delete('delete/{id}', 'TiempoController@delete');
 });

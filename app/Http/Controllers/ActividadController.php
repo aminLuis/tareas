@@ -7,9 +7,9 @@ use App\actividad;
 
 class ActividadController extends Controller
 {
-    public function list($id_user){
-        //return actividad::where('id_user',$id_user)->get();
-        return actividad::get();
+    public function list($id){
+        return actividad::where('id_user',$id)->get();
+       // return actividad::get();
     }
 
     public function save(Request $request){
