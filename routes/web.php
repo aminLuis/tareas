@@ -20,3 +20,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['prefix'=>'actividad'],function(){
+    Route::get('list', 'ActividadController@list');
+    Route::post('save', 'ActividadController@save');
+    Route::put('update/{actividad}', 'ActividadController@update');
+    Route::delete('deleteInsumo', 'ActividadController@delete');
+});
+
+Route::group(['prefix'=>'tiempo'],function(){
+    Route::get('list', 'TiempoController@list');
+    Route::post('save', 'TiempoController@save');
+    Route::put('update/{actividad}', 'TiempoController@update');
+    Route::delete('deleteInsumo', 'TiempoController@delete');
+});
