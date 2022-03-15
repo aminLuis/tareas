@@ -30,7 +30,7 @@ Route::group(['prefix'=>'actividad'],function(){
 });
 
 Route::group(['prefix'=>'tiempo'],function(){
-    Route::get('list{id}', 'TiempoController@list');
+    Route::get('list/{id}', 'TiempoController@list');
     Route::post('save', 'TiempoController@save');
     Route::put('update/{tiempo}', 'TiempoController@update');
     Route::delete('delete/{id}', 'TiempoController@delete');
